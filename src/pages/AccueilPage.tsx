@@ -7,16 +7,16 @@ const AccueilPage = () => {
   const projetsMisesEnAvant = projetsDanie.slice(0, 4);
 
   return (
-    <div className="space-y-24">
+    <div className="space-y-16 sm:space-y-24">
       <section
-        className="grid md:grid-cols-[1.25fr,1fr] gap-10 items-center"
+        className="grid md:grid-cols-[1.25fr,1fr] gap-8 md:gap-10 items-center"
         id="haut-de-page"
       >
         <div data-aos="fade-right">
-          <p className="font-titre text-sm uppercase tracking-[0.35em] text-danie-teal mb-4">
+          <p className="font-titre text-xs sm:text-sm uppercase tracking-[0.35em] text-danie-teal mb-3 sm:mb-4">
             {langue === "fr" ? "Portfolio d'infographie" : "Graphic design portfolio"}
           </p>
-          <h1 className="font-titre text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+          <h1 className="font-titre text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-5 sm:mb-6">
             Danie Info,
             <span className="block text-danie-teal">
               {langue === "fr"
@@ -24,13 +24,13 @@ const AccueilPage = () => {
                 : "5+ years of experience in visual design"}
             </span>
           </h1>
-          <p className="text-base sm:text-lg text-gray-300 max-w-xl mb-8">
+          <p className="text-sm sm:text-base md:text-lg text-gray-300 max-w-xl mb-6 sm:mb-8">
             {langue === "fr"
               ? "Je conçois des identités visuelles, affiches, visuels digitaux et interfaces modernes pour donner du poids à votre communication. Chaque projet est pensé pour être clair, élégant et mémorable."
               : "I design visual identities, posters, digital visuals and modern interfaces to make your communication stronger. Each project is crafted to be clear, elegant and memorable."}
           </p>
 
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-3 sm:gap-4">
             <Link
               to="/galerie"
               className="inline-flex items-center gap-2 rounded-full bg-danie-teal px-7 py-3.5 text-sm sm:text-base font-semibold uppercase tracking-wide text-white shadow-carte-danie hover:bg-danie-teal-fonce transition-colors"
@@ -47,25 +47,25 @@ const AccueilPage = () => {
             </a>
           </div>
 
-          <div className="mt-10 grid grid-cols-3 gap-4 text-sm sm:text-base">
-            <div className="border border-white/5 rounded-3xl px-4 py-4 bg-white/5">
-              <p className="font-titre text-3xl font-bold text-danie-teal">
+          <div className="mt-8 sm:mt-10 grid grid-cols-3 gap-3 sm:gap-4 text-xs sm:text-sm md:text-base">
+            <div className="border border-white/5 rounded-3xl px-3 py-3 sm:px-4 sm:py-4 bg-white/5">
+              <p className="font-titre text-2xl sm:text-3xl font-bold text-danie-teal">
                 5+
               </p>
               <p className="text-gray-300">
                 {langue === "fr" ? "années d'expérience" : "years of experience"}
               </p>
             </div>
-            <div className="border border-white/5 rounded-3xl px-4 py-4 bg-white/5">
-              <p className="font-titre text-3xl font-bold text-danie-teal">
+            <div className="border border-white/5 rounded-3xl px-3 py-3 sm:px-4 sm:py-4 bg-white/5">
+              <p className="font-titre text-2xl sm:text-3xl font-bold text-danie-teal">
                 80+
               </p>
               <p className="text-gray-300">
                 {langue === "fr" ? "projets livrés" : "projects delivered"}
               </p>
             </div>
-            <div className="border border-white/5 rounded-3xl px-4 py-4 bg-white/5">
-              <p className="font-titre text-3xl font-bold text-danie-teal">
+            <div className="border border-white/5 rounded-3xl px-3 py-3 sm:px-4 sm:py-4 bg-white/5">
+              <p className="font-titre text-2xl sm:text-3xl font-bold text-danie-teal">
                 100%
               </p>
               <p className="text-gray-300">
@@ -108,25 +108,25 @@ const AccueilPage = () => {
         </div>
       </section>
 
-      <section className="space-y-10" data-aos="fade-up">
+      <section className="space-y-8 sm:space-y-10" data-aos="fade-up">
         <header className="space-y-2">
-          <p className="font-titre text-sm uppercase tracking-[0.35em] text-danie-teal">
+          <p className="font-titre text-xs sm:text-sm uppercase tracking-[0.35em] text-danie-teal">
             {langue === "fr" ? "Prestations principales" : "Main services"}
           </p>
-          <h2 className="font-titre text-3xl sm:text-4xl font-semibold">
+          <h2 className="font-titre text-2xl sm:text-3xl lg:text-4xl font-semibold">
             {langue === "fr"
               ? "Ce que Danie Info réalise pour vous"
               : "What Danie Info can do for you"}
           </h2>
-          <p className="text-base text-gray-300 max-w-2xl">
+          <p className="text-sm sm:text-base text-gray-300 max-w-2xl">
             {langue === "fr"
               ? "Des prestations pensées pour les entreprises, marques personnelles et institutions qui souhaitent une communication visuelle claire et professionnelle."
               : "Services tailored for businesses, personal brands and institutions seeking clear and professional visual communication."}
           </p>
         </header>
 
-        <div className="grid md:grid-cols-3 gap-7">
-          <article className="rounded-3xl border border-white/5 bg-white/[0.03] p-6 backdrop-blur-sm hover:border-danie-teal/60 transition-colors">
+        <div className="grid md:grid-cols-3 gap-5 md:gap-7">
+          <article className="rounded-3xl border border-white/5 bg-white/[0.03] p-5 sm:p-6 backdrop-blur-sm hover:border-danie-teal/60 transition-colors">
             <div className="flex items-center gap-3 mb-4">
               <div className="h-10 w-10 rounded-2xl bg-danie-teal/15 flex items-center justify-center text-danie-teal">
                 <span className="fa-solid fa-pen-nib" />
@@ -142,7 +142,7 @@ const AccueilPage = () => {
             </p>
           </article>
 
-          <article className="rounded-3xl border border-white/5 bg-white/[0.03] p-6 backdrop-blur-sm hover:border-danie-teal/60 transition-colors">
+          <article className="rounded-3xl border border-white/5 bg-white/[0.03] p-5 sm:p-6 backdrop-blur-sm hover:border-danie-teal/60 transition-colors">
             <div className="flex items-center gap-3 mb-4">
               <div className="h-10 w-10 rounded-2xl bg-danie-teal/15 flex items-center justify-center text-danie-teal">
                 <span className="fa-solid fa-panorama" />
@@ -160,7 +160,7 @@ const AccueilPage = () => {
             </p>
           </article>
 
-          <article className="rounded-3xl border border-white/5 bg-white/[0.03] p-6 backdrop-blur-sm hover:border-danie-teal/60 transition-colors">
+          <article className="rounded-3xl border border-white/5 bg-white/[0.03] p-5 sm:p-6 backdrop-blur-sm hover:border-danie-teal/60 transition-colors">
             <div className="flex items-center gap-3 mb-4">
               <div className="h-10 w-10 rounded-2xl bg-danie-teal/15 flex items-center justify-center text-danie-teal">
                 <span className="fa-solid fa-display" />
@@ -196,14 +196,14 @@ const AccueilPage = () => {
           </h2>
         </header>
 
-        <div className="grid md:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-4 gap-4 md:gap-6">
           {projetsMisesEnAvant.map((projet) => (
             <Link
               key={projet.id}
               to={`/projets/${projet.id}`}
               className="group rounded-3xl overflow-hidden border border-white/5 bg-black/40 backdrop-blur-sm hover:border-danie-teal/70 hover:-translate-y-2 transition-all duration-300"
             >
-              <div className="relative h-56 overflow-hidden">
+              <div className="relative h-48 sm:h-56 overflow-hidden">
                 <img
                   src={projet.image}
                   alt={projet.titre}
@@ -213,11 +213,11 @@ const AccueilPage = () => {
                   {projet.categorie}
                 </span>
               </div>
-              <div className="p-5 space-y-2">
-                <h3 className="font-titre text-lg font-semibold">
+              <div className="p-4 sm:p-5 space-y-1.5">
+                <h3 className="font-titre text-sm sm:text-lg font-semibold">
                   {projet.titre}
                 </h3>
-                <p className="text-sm text-gray-300">
+                <p className="text-xs sm:text-sm text-gray-300">
                   {projet.description}
                 </p>
               </div>
@@ -225,13 +225,13 @@ const AccueilPage = () => {
           ))}
         </div>
 
-        <div className="flex flex-wrap items-center justify-between gap-4 mt-4">
-          <p className="text-sm sm:text-base text-gray-300 max-w-xl">
+        <div className="flex flex-wrap items-center justify-between gap-3 sm:gap-4 mt-4">
+          <p className="text-xs sm:text-sm md:text-base text-gray-300 max-w-xl">
             {langue === "fr"
               ? "Vous avez un projet précis ou une campagne complète à lancer ? Décrivez votre besoin en quelques lignes et recevez une proposition sur mesure."
               : "Do you have a specific project or a full campaign to launch? Share a few details and receive a tailored proposal."}
           </p>
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap gap-2 sm:gap-3">
             <Link
               to="/galerie"
               className="inline-flex items-center gap-2 rounded-full bg-white text-danie-noir px-7 py-3.5 text-sm sm:text-base font-semibold uppercase tracking-wide hover:bg-gray-100 transition-colors"
@@ -256,15 +256,15 @@ const AccueilPage = () => {
 
       <section
         id="section-contact-accueil"
-        className="space-y-6 border border-white/5 rounded-3xl bg-black/60 p-6 md:p-8"
+        className="space-y-6 border border-white/5 rounded-3xl bg-black/60 p-5 md:p-8"
         data-aos="fade-up"
       >
-        <h2 className="font-titre text-2xl sm:text-3xl font-semibold">
+        <h2 className="font-titre text-xl sm:text-2xl md:text-3xl font-semibold">
           {langue === "fr"
             ? "Un projet en tête ? Parlons-en dès maintenant."
             : "Have a project in mind? Let's talk about it now."}
         </h2>
-        <p className="text-sm sm:text-base text-gray-300 max-w-3xl">
+        <p className="text-xs sm:text-sm md:text-base text-gray-300 max-w-3xl">
           {langue === "fr"
             ? "Que ce soit pour une identité visuelle complète, une série de visuels pour vos réseaux ou une direction artistique plus globale, Danie Info vous accompagne avec une approche sur mesure."
             : "Whether you need a full visual identity, a series of social visuals or broader art direction, Danie Info will support you with a tailor-made approach."}

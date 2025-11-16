@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 import { useLangue } from "../contexteLangue";
@@ -10,6 +11,7 @@ const liensNavigation = [
 ];
 
 const EnteteSite = () => {
+  const [menuOuvert, setMenuOuvert] = useState(false);
   const { langue, changerLangue } = useLangue();
 
   const libellés = {
@@ -45,9 +47,9 @@ const EnteteSite = () => {
       </div>
 
       {/* Barre principale */}
-      <div className="bg-black/70 backdrop-blur-lg">
-        <div className="max-w-6xl mx-auto flex items-center px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex items-center gap-3">
+      <div className="bg-black/80 backdrop-blur-lg">
+        <div className="max-w-6xl mx-auto flex items-center px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
+          <div className="flex items-center gap-3 flex-1">
             <div className="h-10 w-10 rounded-lg bg-danie-teal flex items-center justify-center shadow-carte-danie">
               <span className="font-titre text-lg font-semibold tracking-tight">
                 DI
@@ -63,6 +65,7 @@ const EnteteSite = () => {
             </div>
           </div>
 
+          {/* Navigation desktop */}
           <nav className="hidden md:flex items-center gap-8 text-base font-medium ml-auto">
             {liensNavigation.map((lien) => (
               <NavLink
@@ -109,8 +112,68 @@ const EnteteSite = () => {
               </button>
             </div>
           </nav>
+
+          {/* Bouton menu mobile */}
+          <button
+            type="button"
+            className="md:hidden ml-4 inline-flex items-center justify-center rounded-full border border-white/10 h-9 w-9 text-gray-100 hover:text-danie-teal hover:border-danie-teal/60 transition-colors"
+            onClick={() => setMenuOuvert((ouvert) => !ouvert)}
+            aria-label={menuOuvert ? "Fermer le menu" : "Ouvrir le menu"}
+          >
+            <span
+              className={`fa-solid ${
+                menuOuvert ? "fa-xmark text-base" : "fa-bars text-sm"
+              }`}
+            />
+          </button>
         </div>
       </div>
+
+      {/* Menu mobile déroulant */}
+      {menuOuvert && (
+        <div className="md:hidden bg-black/95 border-t border-white/5">
+          <nav className="max-w-6xl mx-auto px-4 py-3 space-y-3">
+            {liensNavigation.map((lien) => (
+              <NavLink
+                key={lien.chemin}
+                to={lien.chemin}
+                onClick={() => setMenuOuvert(false)}
+                className={({ isActive }) =>
+                  `block rounded-full px-4 py-2 text-sm font-medium transition-colors duration-200 ${
+                    isActive
+                      ? "bg-danie-teal text-white"
+                      : "text-gray-200 hover:bg-white/5 hover:text-danie-teal"
+                  }`
+                }
+              >
+                {libellés[lien.clé as keyof typeof libellés]}
+              </NavLink>
+            ))}
+
+            <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.25em] border border-white/10 rounded-full px-3 py-1.5 bg-white/5 w-fit mt-2">
+              <button
+                type="button"
+                onClick={() => changerLangue("fr")}
+                className={`transition-colors ${
+                  langue === "fr" ? "text-danie-teal" : "text-gray-300"
+                }`}
+              >
+                FR
+              </button>
+              <span className="text-gray-500">/</span>
+              <button
+                type="button"
+                onClick={() => changerLangue("en")}
+                className={`transition-colors ${
+                  langue === "en" ? "text-danie-teal" : "text-gray-300"
+                }`}
+              >
+                EN
+              </button>
+            </div>
+          </nav>
+        </div>
+      )}
     </header>
   );
 };
