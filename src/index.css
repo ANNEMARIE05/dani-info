@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-danie-noir text-danie-blanc font-texte antialiased;
+}
+
+#root {
+  @apply min-h-screen;
+}
