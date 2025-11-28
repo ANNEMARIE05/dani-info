@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu, X, Phone, Mail, MapPin, ChevronUp, MessageCircle, Briefcase } from 'lucide-react';
 
 export default function PortfolioDaniel() {
@@ -31,7 +31,7 @@ export default function PortfolioDaniel() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const naviguerVers = (id) => {
+  const naviguerVers = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -437,7 +437,7 @@ export default function PortfolioDaniel() {
                 <div>
                   <label className="block text-gray-700 font-medium mb-2">Message</label>
                   <textarea
-                    rows="4"
+                    rows={4}
                     className="w-full px-4 py-3 border border-orange-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-600 bg-white resize-none"
                     placeholder="Décrivez votre projet..."
                   ></textarea>
@@ -516,7 +516,7 @@ export default function PortfolioDaniel() {
         </button>
       )}
 
-      <style jsx>{`
+      <style>{`
         @keyframes fadeInUp {
           from {
             opacity: 0;
